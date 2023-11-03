@@ -1,10 +1,11 @@
 import React from "react";
+import Courses from "../Courses/Courses";
 
 const Home = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      <Courses />
+    </>
   );
 };
 
