@@ -35,9 +35,6 @@ const Navbar = () => {
           <Link to="/" className="text-white">
             Home
           </Link>
-          <Link to="/courses" className="text-white">
-            Courses
-          </Link>
           <Link to="/" className="text-white">
             Dashboard
           </Link>
@@ -78,14 +75,7 @@ const Navbar = () => {
             className="text-white text-2xl p-4"
             onClick={toggleDrawer}
           >
-            About
-          </Link>
-          <Link
-            to="/"
-            className="text-white text-2xl p-4"
-            onClick={toggleDrawer}
-          >
-            Contact
+            Dashboard
           </Link>
         </div>
       )}

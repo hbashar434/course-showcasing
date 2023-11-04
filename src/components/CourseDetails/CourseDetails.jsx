@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useGetCourseQuery } from "../../redux/features/course/courseApi";
 import { useParams } from "react-router-dom";
+import Loading from "../../pages/Shared/Loading/Loading";
+import Error from "../../pages/Error/Error";
 
 const CourseDetails = () => {
   const [isSyllabusExpanded, setSyllabusExpanded] = useState(false);
   const { id } = useParams();
-  const { data: course } = useGetCourseQuery(id);
+  const { data: course, isLoading, isError } = useGetCourseQuery(id);
   const {
     name,
     instructor,
@@ -21,6 +23,14 @@ const CourseDetails = () => {
   const handleEnrollClick = () => {
     console.log("Enroll button clicked");
   };
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (!isLoading && isError) {
+    return <Error />;
+  }
 
   return (
     <div className="p-4 max-w-lg mx-auto">
